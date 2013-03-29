@@ -62,12 +62,14 @@ $(
             
           //);
     });
-    // $('#value1').bubbletip($('#tip1_up'));
-    if ($('#value2')[0])
-    $('#value2').bubbletip($('#tip2_up'));
-
-    // $('#value3').bubbletip($('#tip3_up'));
-    // $('#value4').bubbletip($('#tip4_up'));
+    if ($('#did')[0])
+    $('#did').bubbletip($('#tip1_up'));
+    if ($('#keywords')[0])
+    $('#keywords').bubbletip($('#tip2_up'));
+    if ($('#location')[0])
+    $('#location').bubbletip($('#tip3_up'));
+    if ($('#developer_key')[0])
+    $('#developer_key').bubbletip($('#tip4_up'));
 
 
 
@@ -111,7 +113,7 @@ $(
 //Ajax request
 
 
-function loadNextPage(page)
+function loadPage(page)
 {
 var xmlhttp;
 if (window.XMLHttpRequest)

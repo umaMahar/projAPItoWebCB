@@ -7,8 +7,12 @@ class Apicalltocb
 	include HTTParty
 	# @dev_key = 'WDHF7PC72784BJ0NFBZC'
 
-	def self.getJob(did,dev_key)	
+	def self.getJob(did,dev_key)
+		# (params)
+		# 	
+		# passing in the hash of param values
   	resp = get('http://api.careerbuilder.com/v1/job', :query => {:developerkey => dev_key, :did => did})
+  	# resp = get('http://api.careerbuilder.com/v1/job', :query => params)
     json_hash = resp.parsed_response
     return json_hash   
 	end

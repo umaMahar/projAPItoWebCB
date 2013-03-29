@@ -13,8 +13,14 @@
 			<%elsif session[:callType] == 'Keyword' %>	
 				
 					<div class= 'form_content'>
+						
+						
+
+
 						<%= err = displayErr("ResponseJobSearch")%>
 						<%if err.nil? %>
+						   <%= page = params[:pagenumber].blank? ? 1 : params[:pagenumber].to_i %>
+						  <button type="button" onclick="javascript:loadNextPage(<%=page+1%>);">Next Page</button>
 							<%if !@returnValue["ResponseJobSearch"]["Results"]["JobSearchResult"].nil? && !@returnValue["ResponseJobSearch"]["Results"]["JobSearchResult"].empty? %>
 
 								<%= displayKeywordResults.html_safe %>

@@ -22,23 +22,27 @@
 					<div>
 						<%= label_tag(:q1, "Job ID:") %>
 						 <%= text_field_tag(:value1, "", {:class=>"input", :err=>'Enter a valid DID'}) %>
+						 <div id="tip1_up" style="display:none;"><pre class="tip">{ No valid DID Entered.}</pre></div>
 					</div>
 			 	<%elsif (params[:calltype] == "Keyword") || (session[:callType] == "Keyword")%> 
 					<div>
 						<span>
 							<%= label_tag(:q1, "Keyword:") %>
-						  <%= text_field_tag(:value2, "", {:class=>"input", :err=>'No Keyword Entered.'}) %>
+						  <%= text_field_tag(:Keywords, "", {:class=>"input", :err=>'No Keyword Entered.'}) %>
+						  <div id="tip2_up" style="display:none;"><pre class="tip">{ No Keyword Entered.}</pre></div>
 						</span>
 						<span>
 						  <%= label_tag(:q2, "Location:") %>
-						  <%= text_field_tag(:value3, "", {:class=>"input", :err=>'No Location Entered.'}) %>
+						  <%= text_field_tag(:location, "", {:class=>"input", :err=>'No Location Entered.'}) %>
+						   <div id="tip3_up" style="display:none;"><pre class="tip">{ No Location Entered.}</pre></div>
 						</span>
 					</div>
 				<% end %>
 				<p>
 				<div>
 					<%= label_tag(:q1, "Developer Key:") %>
-				  <%= text_field_tag(:value4, "", {:class=>"input", :err=>'Enter a valid Devloper Key.'}) %>
+				  <%= text_field_tag(:DeveloperKey, "", {:class=>"input", :err=>'Enter a valid Devloper Key.'}) %>
+				  <div id="tip4_up" style="display:none;"><pre class="tip">{ Enter a valid Devloper Key.}</pre></div>
 				</div>
 				</p>
 

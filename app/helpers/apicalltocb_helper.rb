@@ -52,6 +52,7 @@ module ApicalltocbHelper
 			j_desc  = a["DescriptionTeaser"] || ""
 			j_loc		= a["LocationFormatted"] || ""
 			j_company = a["Company"] || ""
+			j_currentPage = a["PageNumber"] || ""
 			j_desc = CGI::unescapeHTML(j_desc)
 		 
 		 	html<<"<h5>- Company : " + j_company +"&nbsp&nbsp&nbsp&nbsp&nbspJob Title: "+ j_title +"</h5>"

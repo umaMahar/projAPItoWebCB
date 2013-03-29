@@ -47,17 +47,46 @@ function(){
 
 $(
   function (){
-    $('.main').bind('pageShow',function(e){
-      alert('I just loaded form');
-      var clrVal = null;
-      $ ('#value4').val() = clrVal;
-
-      // $('.input').each(function(){
-      //   $(this).val().clear();
-
-      // });
-
+    $('.input').each(function(){
+          $(this).val("");
+          var hoverText = $(this).attr("err");
+          // $(this).bubbletip($('#tip1_up'));
+          // $(this).hover(
+          //   function(){
+          //     // $(this).append($("<div class='hoverMsg'> **** </div>"))
+          //     
+          //   },
+          //   function(){
+          //     $(this).find("div:last").remove();
+          //   }
+            
+          //);
     });
+    // $('#value1').bubbletip($('#tip1_up'));
+    if ($('#value2')[0])
+    $('#value2').bubbletip($('#tip2_up'));
+
+    // $('#value3').bubbletip($('#tip3_up'));
+    // $('#value4').bubbletip($('#tip4_up'));
+
+
+
+
+    // $('.input').each.hover(function(){
+    //     var hoverText = $(this).attr("err");
+    //     $ (this).text = hoverText;
+    // });
+
+// $("li").hover(
+//   function () {
+//     $(this).append($("<span> ***</span>"));
+//   },
+//   function () {
+//     $(this).find("span:last").remove();
+//   }
+// );
+
+
 
     $('#btnSubmit').click(function (e){
       $('#error_display').html("");
@@ -79,36 +108,41 @@ $(
   }
 );
 
+//Ajax request
+
+
+function loadNextPage(page)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+
+      //need to get the params from the url and go to next page.
+
+    // document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    $(".form_content").html($(xmlhttp.responseText).find(".form_content").html());
+    }
+  }
+
+  var url = window.location +'&pagenumber='+page;
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
+}
+
+
+
+
+
 
  
- /* 
-
-var myName = "the global object";
-var sayHello = function() {
-    console.log( "Hi! My name is " + this.myName );
-};
-var myObject = {
-    myName: "Rebecca"
-};
-var secondObject = {
-    myName: "Colin"
-};
  
-myObject.sayHello = sayHello;
-secondObject.sayHello = sayHello;
- 
-sayHello();              // "Hi! My name is the global object"
-myObject.sayHello();     // "Hi! My name is Rebecca"
-secondObject.sayHello(); 
-*/
-
-/*$(document).ready(function() {
-    $('btnSubmit').click(function(){
-    	if ($('#value1').val().length < 1){
-    		alert('enter a valid job DID');
-    	}
-
-    });
-});
-*/
-/*alert('hi uma!' );*/

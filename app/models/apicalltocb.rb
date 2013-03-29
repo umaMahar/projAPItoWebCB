@@ -13,8 +13,9 @@ class Apicalltocb
     return json_hash   
 	end
 
-	def self.getByKeyword(kywd,loc,dev_key)		
-  	resp = get('http://api.careerbuilder.com/v1/jobsearch', :query => {:developerkey => dev_key, :Keywords => kywd, :Location => loc}, :pagenumber => 2)
+	def self.getByKeyword(params)		
+  	resp = get('http://api.careerbuilder.com/v1/jobsearch', :query => params)
+  		# :developerkey => dev_key, :Keywords => kywd, :Location => loc}, :pagenumber => 2)
   	json_hash = resp.parsed_response        
     return json_hash
 	end

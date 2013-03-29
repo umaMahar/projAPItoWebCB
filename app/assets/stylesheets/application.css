@@ -20,6 +20,9 @@
 		height: 362px;
 }
 
+.hoverMsg { 
+  color:red; 
+}
 
 #banner {
   background: #62AA2A;
